@@ -13,7 +13,9 @@ class TrickFixtures extends Fixture
         foreach ($this->getData() as $key => $trick) {
             $newTrick = new Trick();
 
-            //$newTrick->setTitle($trick['title']);
+            //$newTrick->setName($trick['name']);
+            //$newTrick->setDescript($trick['descript']);
+            //$newTrick->setGroup($trick['group']);
 
             $manager->persist($newTrick);
         }
@@ -25,10 +27,22 @@ class TrickFixtures extends Fixture
     {
         return [
             [
-                'title' => 'blabla',
+                'name' => 'blabla',
             ],
             [
-                'title' => 'blabla 2',
+                'descript' => 'blabla 2',
+            ],
+            [
+                'group' => 'blabla 2',
+            ],
+            [
+                'image' => 'blabla 2',
+            ],
+            [
+                'video' => 'blabla 2',
+            ],
+            [
+                'id_user' => 'blabla 2',
             ]
         ];
     }

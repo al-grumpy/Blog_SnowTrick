@@ -29,10 +29,14 @@ class TrickController extends AbstractController
         }
         
     /**
-     * @Route("/singleTrick")
+     * @Route(
+     * "/Trick/{postId</d+>}",
+     * name="trick",
+     * methods={"GET"}
+     * )
      * @Template
      */
-    public function singleTrick(/**  */)
+    public function showTrick($postId = 1)
         {
             // return ['trick' => $manager->getRepository(Trick::class)->findBy(['isOnline' => true])];
             return [];
