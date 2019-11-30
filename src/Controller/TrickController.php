@@ -36,7 +36,7 @@ class TrickController extends AbstractController
      * )
      * @Template
      */
-    public function showTrick($postId = 1)
+    public function showTrick($postId)
         {
             // return ['trick' => $manager->getRepository(Trick::class)->findBy(['isOnline' => true])];
             return [];
