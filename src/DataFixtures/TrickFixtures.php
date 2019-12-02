@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Trick;
+use App\DataFixtures\UserFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -12,10 +13,10 @@ class TrickFixtures extends Fixture
     {
         foreach ($this->getData() as $key => $trick) {
             $newTrick = new Trick();
-
-            //$newTrick->setName($trick['name']);
-            //$newTrick->setDescript($trick['descript']);
-            //$newTrick->setGroup($trick['group']);
+            $newTrick->setName($trick['name']);
+            $newTrick->setDescript($trick['descript']);
+            $newTrick->setGroup($trick['group']);
+            $newTrick->setUser($this->getReference(UserFixtures::USER_REFERENCE));
 
             $manager->persist($newTrick);
         }
@@ -23,26 +24,27 @@ class TrickFixtures extends Fixture
         $manager->flush();
     }
 
+
     private function getData()
     {
         return [
             [
-                'name' => 'blabla',
+                'name' => '',
             ],
             [
-                'descript' => 'blabla 2',
+                'descript' => '',
             ],
             [
-                'group' => 'blabla 2',
+                'group' => '',
             ],
             [
-                'image' => 'blabla 2',
+                'image' => '',
             ],
             [
-                'video' => 'blabla 2',
+                'video' => '',
             ],
             [
-                'id_user' => 'blabla 2',
+                'user' => '',
             ]
         ];
     }

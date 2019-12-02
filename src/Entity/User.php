@@ -22,6 +22,11 @@ class User
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $mail;
@@ -44,6 +49,17 @@ class User
     public  function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public  function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
         return $this;
     }
 

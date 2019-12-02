@@ -22,7 +22,7 @@ class Trick
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $movie;
 
@@ -40,6 +40,8 @@ class Trick
      * @ORM\Column(type="string", length=255)
      */
     private $group;
+
+    private $user;
 
     public function getId(): ?int
     {
@@ -98,6 +100,18 @@ class Trick
     public  function setGroup(string $group): self
     {
         $this->group = $group;
+        return $this;
+    }
+
+    //Liaison fixture User
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
         return $this;
     }
 }
